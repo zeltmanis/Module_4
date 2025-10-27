@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f83be8c9-360e-4dd0-9d12-296f7118ccdf" name="Changes" comment="Add lottery fair">
-      <change beforePath="$PROJECT_DIR$/.idea/PythonProject4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonProject4.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students.py" beforeDir="false" afterPath="$PROJECT_DIR$/students.py" afterDir="false" />
-    </list>
+    <list default="true" id="f83be8c9-360e-4dd0-9d12-296f7118ccdf" name="Changes" comment="Fix report running with options" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,7 +148,23 @@
       <option name="project" value="LOCAL" />
       <updated>1761596342223</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fix bugs for male/ female">
+      <option name="closed" value="true" />
+      <created>1761597779386</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1761597779386</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fix report running with options">
+      <option name="closed" value="true" />
+      <created>1761597947492</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1761597947492</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -161,6 +173,8 @@
     <MESSAGE value="File for dorm room generation" />
     <MESSAGE value="DormRooms updated with default values 40/30" />
     <MESSAGE value="Add lottery fair" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add lottery fair" />
+    <MESSAGE value="Fix bugs for male/ female" />
+    <MESSAGE value="Fix report running with options" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix report running with options" />
   </component>
 </project>
