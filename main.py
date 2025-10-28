@@ -87,7 +87,7 @@ def main():
             comparison_sorted = comparison.sort_values(by="Times Won Diff", ascending=False)
 
             # Save nicely formatted TXT
-            with open("lottery_comparison_nice.txt", "w") as f:
+            with open("lottery_comparison.txt", "w") as f:
                 f.write(f"{'Student ID':<12} {'GPA':>6} {'Times Won (R)':>15} {'Times Won (GPA)':>18} "
                         f"{'Diff':>10} {'% Diff':>10}\n")
                 f.write("-"*75 + "\n")
@@ -96,7 +96,7 @@ def main():
                             f"{row['Times Won_gpa']:>18} {row['Times Won Diff']:>10} "
                             f"{row['Percentage Diff']:>10.2f}\n")
 
-            print("\n📊 Comparison complete! Report saved to lottery_comparison_nice.txt\n")
+            print("\n📊 Comparison complete! Report saved to lottery_comparison.txt\n")
 
             # Display with Rich
             table = Table(title="🎯 Lottery Comparison: Random vs GPA-weighted")

@@ -24,7 +24,7 @@ class ReportGenerator:
         )
 
         # Save nicely formatted text file
-        with open("lottery_report_nice.txt", "w") as f:
+        with open("lottery_report.txt", "w") as f:
             f.write(f"{'Student ID':<10} {'Gender':<6} {'Times Won':>10} {'Percentage':>10}\n")
             f.write("-"*40 + "\n")
             for sid, gender, times, perc in results:
@@ -61,7 +61,7 @@ class ReportGenerator:
         )
 
         # Save nicely formatted text file
-        with open("lottery_report_gpa_nice.txt", "w") as f:
+        with open("lottery_report_gpa.txt", "w") as f:
             f.write(f"{'Student ID':<10} {'Gender':<6} {'GPA':>5} {'Tickets':>7} "
                     f"{'Times Won':>10} {'Percentage':>10}\n")
             f.write("-"*60 + "\n")
