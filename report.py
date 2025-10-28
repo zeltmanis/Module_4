@@ -39,6 +39,8 @@ class ReportGenerator:
         for sid, gender, times, perc in results:
             table.add_row(sid, gender, str(times), str(perc))
         self.console.print(table)
+
+        # Return results as list of tuples for comparison
         return results
 
     def run_gpa_weighted_simulation(self):
@@ -77,4 +79,6 @@ class ReportGenerator:
         for sid, gender, gpa, tickets, times, perc in results:
             table.add_row(sid, gender, str(gpa), str(tickets), str(times), str(perc))
         self.console.print(table)
+
+        # Return results as list of tuples for comparison
         return results
