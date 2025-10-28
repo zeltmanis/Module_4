@@ -65,7 +65,7 @@ def main():
             singles, doubles = lottery.run_lottery()
             lottery.print_lottery(singles, doubles)
 
-            report = ReportGenerator(lottery, runs=runs, report_file="lottery_report.csv")
+            report = ReportGenerator(lottery, runs=runs)
             report.run_simulation()
 
         # === Option 2: GPA-weighted lottery ===
@@ -77,7 +77,7 @@ def main():
             singles, doubles = lottery.run_gpa_weighted_lottery()
             lottery.print_lottery(singles, doubles)
 
-            report = ReportGenerator(lottery, runs=runs, report_file="lottery_gpa_report.csv")
+            report = ReportGenerator(lottery, runs=runs)
             report.run_gpa_weighted_simulation()
 
         # === Option 3: Adjust rooms ===
