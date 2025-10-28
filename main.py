@@ -3,6 +3,7 @@ from students import Students, Student
 from lottery import DormLottery
 from report import ReportGenerator
 
+
 def get_lottery_runs():
     """
     Ask user how many times to run the lottery using menu choices.
@@ -24,6 +25,17 @@ def get_lottery_runs():
             return options[choice]
         print("❌ Invalid input. Please select 1, 2, 3, or 4.")
 
+
+def generate_students(students_generator):
+    """Helper to create all Student objects with random GPA"""
+    students = []
+    for i in range(1, students_generator.female_students + 1):
+        students.append(Student(f"F{i:03}", "F"))
+    for i in range(1, students_generator.male_students + 1):
+        students.append(Student(f"M{i:03}", "M"))
+    return students
+
+
 def main():
     print("🎓 Welcome to the Dorm Room Builder System\n")
 
@@ -37,47 +49,52 @@ def main():
 
     while True:
         print("\n===== Lottery Menu =====")
-        print("1. Run lottery / generate report")
-        print("2. Adjust dorm rooms (auto adjusts students)")
-        print("3. Quit")
+        print("1. Run random lottery / generate report")
+        print("2. Run GPA-influenced lottery / generate report")
+        print("3. Adjust dorm rooms (auto adjusts students)")
+        print("4. Quit")
 
         choice = input("Select an option: ").strip()
 
+        # === Option 1: Regular random lottery ===
         if choice == "1":
-            # Ask how many runs
             runs = get_lottery_runs()
-
-            # Generate Student objects
-            students = []
-            for i in range(1, students_generator.female_students + 1):
-                students.append(Student(f"F{i:03}", "F"))
-            for i in range(1, students_generator.male_students + 1):
-                students.append(Student(f"M{i:03}", "M"))
-
+            students = generate_students(students_generator)
             lottery = DormLottery(students, dorm.single_rooms, dorm.double_rooms)
 
-            # Run single lottery
             singles, doubles = lottery.run_lottery()
             lottery.print_lottery(singles, doubles)
 
-            # Run multiple simulations and generate report
             report = ReportGenerator(lottery, runs=runs, report_file="lottery_report.csv")
             report.run_simulation()
 
+        # === Option 2: GPA-weighted lottery ===
         elif choice == "2":
-            # Adjust rooms
+            runs = get_lottery_runs()
+            students = generate_students(students_generator)
+            lottery = DormLottery(students, dorm.single_rooms, dorm.double_rooms)
+
+            singles, doubles = lottery.run_gpa_weighted_lottery()
+            lottery.print_lottery(singles, doubles)
+
+            report = ReportGenerator(lottery, runs=runs, report_file="lottery_gpa_report.csv")
+            report.run_gpa_weighted_simulation()
+
+        # === Option 3: Adjust rooms ===
+        elif choice == "3":
             dorm.create_rooms()
-            # Update max capacity in Students
             students_generator.max_capacity = dorm.single_rooms + dorm.double_rooms * 2
             print("\n🔄 Auto-adjusting students for new dorm setup...")
             students_generator.create_students()
 
-        elif choice == "3":
+        # === Option 4: Quit ===
+        elif choice == "4":
             print("👋 Exiting Dorm Lottery System. Goodbye!")
             break
 
         else:
-            print("❌ Invalid option, please choose 1–3.")
+            print("❌ Invalid option, please choose 1–4.")
+
 
 if __name__ == "__main__":
     main()

@@ -48,3 +48,7 @@ class Student:
     def __init__(self, student_id, gender):
         self.id = student_id
         self.gender = gender
+        self.gpa = round(random.uniform(0.0, 10.0), 2)
+
+        def __repr__(self):
+            return f"{self.id} ({self.gender}) - GPA: {self.gpa}"
