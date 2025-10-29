@@ -11,7 +11,7 @@ class DormRooms:
         while True:
             try:
                 value = input(
-                    f"Enter number of {room_type} rooms (0–999) or press Enter for default ({default_value}): ")
+                    f"Enter number of {room_type} rooms (0–100) or press Enter for default ({default_value}): ")
 
                 # ✅ If no input → use default
                 if value.strip() == "":
@@ -25,8 +25,8 @@ class DormRooms:
                 value = int(value)
 
                 # ✅ Check valid range
-                if value < 0 or value > 999:
-                    raise ValueError("Value must be between 0 and 999.")
+                if value < 0 or value > 100:
+                    raise ValueError("Value must be between 0 and 100.")
 
                 return value
 
